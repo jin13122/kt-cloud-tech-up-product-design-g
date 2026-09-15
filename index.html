@@ -40,6 +40,8 @@
                 </div>
             </div>
             <div class="flex items-center space-x-4 text-sm font-medium text-slate-300">
+                <!-- 모바일에서 누르면 바로 전화걸기 -->
+                </a>
             </div>
         </div>
     </header>
@@ -164,8 +166,8 @@
                         <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4 text-blue-400">
                             <i data-lucide="award" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="text-lg font-bold mb-2 text-yellow-400">우수 수료생 채용 지원 시 우대</h4>
-                        <p class="text-slate-400 text-sm leading-relaxed">탁월한 성과를 인정받은 우수 수료생은 kt cloud 채용 과정에서 우대 혜택을 받아 취업 경쟁력을 높일 수 있습니다.</p>
+                        <h4 class="text-lg font-bold mb-2 text-white">실전 경험으로 쌓는 취업 경쟁력</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">프로젝트 기반의 실전 커리큘럼과 현직자 피드백을 통해 실무 역량을 쌓으며, 취업 시장에서 경쟁력 있는 포트폴리오와 역량을 갖출 수 있습니다.</p>
                     </div>
                     <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 hover:border-slate-700 transition">
                         <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4 text-blue-400">
@@ -395,6 +397,8 @@
                             <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm">
                                 <i data-lucide="phone" class="w-5 h-5 text-sky-500"></i>
                             </div>
+                            <div>
+                            </div>
                         </div>
                         <div class="flex items-center">
                             <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 shadow-sm">
@@ -416,130 +420,163 @@
                             kt cloud 프로덕트 디자인 상담신청 <span class="w-2 h-2 rounded-full bg-red-500 ml-2"></span>
                         </h3>
                         
-                        <!-- Formspree 연동 -->
-                        <form action="https://formspree.io/f/maqdkapy" method="POST" class="space-y-4">
-                            <div class="grid grid-cols-2 gap-4">
+                            <!-- Success Message (Hidden by default) -->
+                            <div id="success-message" class="hidden text-center py-16">
+                                <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <svg class="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <h4 class="text-2xl font-bold text-slate-900 mb-3">상담 신청이 완료되었습니다!</h4>
+                                <p class="text-slate-600 font-medium">빠른 시일 내에 기재해주신 연락처로 안내해 드리겠습니다.</p>
+                            </div>
+                            
+                            <!-- Form -->
+                            <form id="consult-form" class="space-y-4">
+                                <input type="hidden" name="_form_id" value="513577b3eccb06d86677eea25da57622">
+                                
                                 <div>
-                                    <label class="block text-sm font-bold text-slate-700 mb-1">이름</label>
-                                    <input type="text" name="name" placeholder="홍길동" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">과정명</label>
+                                    <input type="text" name="course" value="KT클라우드 프로덕트디자인" readonly class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-slate-50 text-slate-500 focus:outline-none transition">
                                 </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-bold text-slate-700 mb-1">이름</label>
+                                        <input type="text" name="name" placeholder="홍길동" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold text-slate-700 mb-1">생년</label>
+                                        <input type="text" name="birth_year" placeholder="예: 97년생" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                                    </div>
+                                </div>
+                                
                                 <div>
-                                    <label class="block text-sm font-bold text-slate-700 mb-1">생년</label>
-                                    <input type="text" name="birth_year" placeholder="예: 97년생" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">연락처</label>
+                                    <input type="tel" name="phone" placeholder="010-0000-0000" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
                                 </div>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-1">연락처</label>
-                                <input type="tel" name="phone" placeholder="010-0000-0000" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-2">교육목적</label>
-                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                                    <label class="flex items-center justify-center px-2 py-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 transition">
-                                        <input type="radio" name="purpose" value="취업/이직" class="mr-2" required>
-                                        <span class="text-sm font-medium">취업/이직</span>
-                                    </label>
-                                    <label class="flex items-center justify-center px-2 py-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 transition">
-                                        <input type="radio" name="purpose" value="자기개발" class="mr-2">
-                                        <span class="text-sm font-medium">자기개발</span>
-                                    </label>
-                                    <label class="flex items-center justify-center px-2 py-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 transition">
-                                        <input type="radio" name="purpose" value="창업" class="mr-2">
-                                        <span class="text-sm font-medium">창업</span>
-                                    </label>
-                                    <label class="flex items-center justify-center px-2 py-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 transition">
-                                        <input type="radio" name="purpose" value="기타" class="mr-2">
-                                        <span class="text-sm font-medium">기타</span>
-                                    </label>
+                                
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">교육목적</label>
+                                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                        <label class="flex items-center justify-center px-2 py-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                                            <input type="radio" name="purpose" value="취업/이직" class="mr-2" required>
+                                            <span class="text-sm font-medium">취업/이직</span>
+                                        </label>
+                                        <label class="flex items-center justify-center px-2 py-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                                            <input type="radio" name="purpose" value="자기개발" class="mr-2">
+                                            <span class="text-sm font-medium">자기개발</span>
+                                        </label>
+                                        <label class="flex items-center justify-center px-2 py-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                                            <input type="radio" name="purpose" value="창업" class="mr-2">
+                                            <span class="text-sm font-medium">창업</span>
+                                        </label>
+                                        <label class="flex items-center justify-center px-2 py-3 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50 transition">
+                                            <input type="radio" name="purpose" value="기타" class="mr-2">
+                                            <span class="text-sm font-medium">기타</span>
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-1">문의내용</label>
-                                <textarea name="message" rows="3" placeholder="궁금하신 점을 자유롭게 적어주세요." class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"></textarea>
-                            </div>
-                            
-                            <div class="pt-2">
-                                <div class="flex items-center justify-between bg-slate-50 p-3 rounded-lg border border-slate-200">
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="checkbox" name="privacy_consent" required class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500">
-                                        <span class="ml-2 text-sm font-bold text-slate-700">개인정보 수집 및 이용에 동의합니다. (필수)</span>
-                                    </label>
-                                    <button type="button" onclick="togglePrivacy()" id="privacy-toggle-btn" class="text-xs text-slate-500 bg-slate-200 px-2 py-1 rounded hover:bg-slate-300 transition">
-                                        자세히보기 ▼
-                                    </button>
+                                
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-700 mb-1">문의내용</label>
+                                    <textarea name="message" rows="3" placeholder="궁금하신 점을 자유롭게 적어주세요." class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"></textarea>
                                 </div>
-                                <!-- 개인정보 내용 (기본 숨김) -->
-                                <div id="privacy-content" class="hidden mt-2 p-3 bg-slate-100 rounded-lg text-xs text-slate-600 leading-relaxed border border-slate-200">
-                                    kt cloud TECH UP 실시간온라인문의 신청을 위해 다음과 같이 개인정보 수집 및 이용합니다.<br>
-                                    - 수집목적 : 온라인문의<br>
-                                    - 수집항목 : 이름, 생년, 연락처, 교육목적, 문의내용<br>
-                                    - 보유기간 : 60일
+                                
+                                <div class="pt-2">
+                                    <div class="flex items-center justify-between bg-slate-50 p-3 rounded-lg border border-slate-200">
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="checkbox" name="privacy_consent" required class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500">
+                                            <span class="ml-2 text-sm font-bold text-slate-700">개인정보 수집 및 이용에 동의합니다. (필수)</span>
+                                        </label>
+                                        <button type="button" onclick="togglePrivacy()" id="privacy-toggle-btn" class="text-xs text-slate-500 bg-slate-200 px-2 py-1 rounded hover:bg-slate-300 transition">
+                                            자세히보기 ▼
+                                        </button>
+                                    </div>
+                                    <div id="privacy-content" class="hidden mt-2 p-3 bg-slate-100 rounded-lg text-xs text-slate-600 leading-relaxed border border-slate-200">
+                                        kt cloud TECH UP 실시간온라인문의 신청을 위해 다음과 같이 개인정보 수집 및 이용합니다.<br>
+                                        - 수집목적 : 온라인문의<br>
+                                        - 수집항목 : 이름, 생년, 연락처, 교육목적, 문의내용<br>
+                                        - 보유기간 : 60일
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-lg font-bold text-lg hover:bg-slate-800 transition flex items-center justify-center mt-4">
-                                상담 신청하기
-                            </button>
-                            <p class="text-center text-xs text-slate-400 mt-2">개인정보는 상담 목적으로만 사용되며 안전하게 보호됩니다.</p>
-                        </form>
+                                
+                                <button type="submit" class="w-full bg-slate-900 text-white py-4 rounded-lg font-bold text-lg hover:bg-slate-800 transition flex items-center justify-center mt-4">
+                                    상담 신청하기
+                                </button>
+                                <p class="text-center text-xs text-slate-400 mt-2">개인정보는 상담 목적으로만 사용되며 안전하게 보호됩니다.</p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 푸터 -->
-    <footer class="bg-slate-950 text-slate-500 py-12 text-sm text-center border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-center mb-6">
-                <!-- 로고 이미지 (logo.png 파일을 같은 폴더에 넣어주세요) -->
-                <img src="./logo.png" alt="kt cloud TECH UP" class="h-8 opacity-50 grayscale" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div class="font-bold text-xl text-white tracking-tighter hidden">
-                    kt cloud<span class="text-slate-500"> TECH UP</span>
+        <!-- Footer -->
+        <footer class="bg-slate-950 text-slate-500 py-12 text-sm text-center border-t border-slate-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex justify-center mb-6">
+                    <img src="./logo.png" alt="kt cloud TECH UP" class="h-8 opacity-50 grayscale" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="font-bold text-xl text-white tracking-tighter hidden">
+                        kt cloud<span class="text-slate-500"> TECH UP</span>
+                    </div>
                 </div>
+                <p class="mb-2">교육기관: kt cloud TECH UP</p>
+                <p>&copy; 2024 kt cloud TECH UP. All rights reserved.</p>
             </div>
-            <p class="mb-2">교육기관: kt cloud TECH UP | 홈페이지운영/관리자: 정지윤</p>
-            <p>&copy; 2024 kt cloud TECH UP. All rights reserved.</p>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- 스크립트 -->
-    <script>
-        // 아이콘 렌더링
-        lucide.createIcons();
+        <!-- Scripts -->
+        <script>
+            // 1. Initialize Icons
+            lucide.createIcons();
 
-        // 개인정보 자세히보기 토글 기능
-        function togglePrivacy() {
-            const content = document.getElementById('privacy-content');
-            const btn = document.getElementById('privacy-toggle-btn');
-            
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                btn.innerText = '자세히보기 ▲';
-            } else {
-                content.classList.add('hidden');
-                btn.innerText = '자세히보기 ▼';
+            // 2. Privacy Toggle
+            function togglePrivacy() {
+                const content = document.getElementById('privacy-content');
+                const btn = document.getElementById('privacy-toggle-btn');
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    btn.innerText = '자세히보기 ▲';
+                } else {
+                    content.classList.add('hidden');
+                    btn.innerText = '자세히보기 ▼';
+                }
             }
-        }
 
-        // 스크롤 애니메이션 (Intersection Observer)
-        document.addEventListener("DOMContentLoaded", function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // 한 번만 실행
-                    }
+            // 3. Scroll Animations
+            document.addEventListener("DOMContentLoaded", function() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+                document.querySelectorAll('.reveal').forEach((el) => {
+                    observer.observe(el);
                 });
-            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
-            document.querySelectorAll('.reveal').forEach((el) => {
-                observer.observe(el);
             });
-        });
-    </script>
-</body>
+
+            // 4. Form Submission (Optimistic UI)
+            document.getElementById('consult-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const form = e.target;
+                const formData = new FormData(form);
+                
+                // Hide form, show success message immediately
+                form.classList.add('hidden');
+                document.getElementById('success-message').classList.remove('hidden');
+                
+                // Send in background with keepalive
+                fetch('https://inputhaven.com/api/v1/submit', {
+                    method: 'POST',
+                    body: formData,
+                    keepalive: true
+                }).catch(err => console.error('Form submission error:', err));
+            });
+        </script>
+    </body>
 </html>
